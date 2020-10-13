@@ -1,4 +1,4 @@
- DB = {:conn => SQLite3::Database.new("db/pokemon.db")}
+ # DB = {:conn => SQLite3::Database.new("db/pokemon.db")}
 class Pokemon
   
   attr_accessor :id, :name, :type, :db
@@ -12,9 +12,6 @@ class Pokemon
     end
   
   def self.save(name, type, db)
-    sql = <<-SQL
-    INSERT INTO pokemon (name, type) VALUES (?, ?)
-    SQL
-    DB[:conn].execute(sql, name, type)  
+    db.executeINSERT INTO pokemon (name, type) VALUES (?, ?)
   end
 end
