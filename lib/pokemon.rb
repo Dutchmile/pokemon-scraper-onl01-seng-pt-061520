@@ -1,4 +1,4 @@
- DB = {:conn => SQLite3::Database.new("db/schema_migration.sql")}
+ DB = {:conn => SQLite3::Database.new("db/pokemon.db")}
 
 class Pokemon
   
