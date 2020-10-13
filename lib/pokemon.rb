@@ -13,7 +13,7 @@ class Pokemon
     end
   
   def self.save(name, type, db)
-    new_pokemon = self.new(id = nil, name, type, db)
+    new_pokemon = self.new
     sql = <<-SQL
     INSERT INTO pokemon (name, type) VALUES (?, ?)
     SQL
